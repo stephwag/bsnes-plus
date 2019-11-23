@@ -345,20 +345,22 @@ bsnesexport void snesmusic_render(uint16_t *data, unsigned pitch, unsigned width
 	// TODO: clip text to height if needed, but we're not drawing that much right now
 	
 	// show title
+    //#if defined(PLATFORM_OSX)
+    //#endif
 	BitmapFont::print(PXL(PAD+0, PAD+0), pitch, 
 		point_shadow<0x001f>, string_convert("Title", 40));
 	BitmapFont::print(PXL(PAD+40, PAD+0), pitch, 
-		point_shadow, string_convert(info.title, width-40));
+		point_shadow<0x7fff>, string_convert(info.title, width-40));
 	// show artist
 	BitmapFont::print(PXL(PAD+0, PAD+BitmapFont::HEIGHT), pitch, 
 		point_shadow<0x001f>, string_convert("Artist", 40));
 	BitmapFont::print(PXL(PAD+40, PAD+BitmapFont::HEIGHT), pitch, 
-		point_shadow, string_convert(info.artist, width-40));
+		point_shadow<0x7fff>, string_convert(info.artist, width-40));
 	// show game name
 	BitmapFont::print(PXL(PAD+0, PAD+BitmapFont::HEIGHT*2), pitch, 
 		point_shadow<0x001f>, string_convert("Game", 40));
 	BitmapFont::print(PXL(PAD+40, PAD+BitmapFont::HEIGHT*2), pitch, 
-		point_shadow, string_convert(info.game, width-40));
+		point_shadow<0x7fff>, string_convert(info.game, width-40));
 	
 #undef PAD
 #undef PXL
