@@ -38,7 +38,14 @@ Up-to-date development builds are available [from AppVeyor](https://ci.appveyor.
 
 ## Building on OS X
 
-Currently, OS X is not officially 100% supported. See [this fork](https://github.com/Optiroc/bsnes-plus) for now.
+- Install/upgrade Xcode (version 11.2.1 or higher)
+- Install Qt via Homebrew: `brew install qt`
+- Run `make`
+
+### Optimal settings on OS X
+
+- In Preferences -> Advanced, make sure Video Driver is set to Qt-OpenGL
+- In Settings -> Video Mode, turn off Correct Aspect Ratio
 
 ## Building on Linux / other *nix
 
