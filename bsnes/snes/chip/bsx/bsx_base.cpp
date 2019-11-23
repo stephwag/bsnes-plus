@@ -232,7 +232,7 @@ uint8 BSXBase::mmio_read(unsigned addr) {
           if (stream.channel == 0)
           {
             //Return Time
-            stream.data = get_time(stream);
+            stream.data = 0;
           }
           else if (stream.packets.open())
           {
