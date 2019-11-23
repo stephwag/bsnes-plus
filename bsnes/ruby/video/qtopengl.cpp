@@ -50,8 +50,13 @@ public:
     }
 
     void paintGL() {
-      unsigned outputWidth  = width();
-      unsigned outputHeight = height();
+      #if defined(PLATFORM_OSX)
+        unsigned outputWidth  = width()*2;
+        unsigned outputHeight = height()*2;
+      #else
+        unsigned outputWidth  = width();
+        unsigned outputHeight = height();
+      #endif
 
       glMatrixMode(GL_PROJECTION);
       glLoadIdentity();
